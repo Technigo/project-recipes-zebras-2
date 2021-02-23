@@ -1,7 +1,62 @@
 body {
-    background-color: green;
+    background-color:#edf0e5; 
+    color: #90975b;
+    margin: 0px;
+}
+
+.header {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;  
 }
 
 h1 {
-    color: pink;
+    text-align: center;
+    font-size: 36px;
+    font-family: 'Lobster Two', cursive;
+    margin-bottom: 20px;
+    color: #3d4d09;
+}
+
+.header-icon {
+    width: 20%; 
+}
+
+.recipe-container {
+    font-family: 'Red Hat Display', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-left: 5%;
+    background-color: #ffffff;
+    width: 90%;
+    height: auto;
+}
+
+.recipe-items {
+    justify-content: center;
+    margin-left:5%;
+}
+
+.recipe-items h2 {
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-top: 40px;
+}
+
+.recipe-items p {
+font-size: 16px;
+}
+
+.recipe-items img {
+}
+
+img:hover {
+opacity: 0.5;
+}
+
+.icon {
+    width: 5%;
+    padding-right: 20px;
 }
