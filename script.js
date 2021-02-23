@@ -1,6 +1,4 @@
 
-
-
 const myRecipeFunc = () => {
   fetch(
     `https://api.edamam.com/search?q=vegetarian&app_id=af973ae3&app_key=3d25a0aca50ab9f0f6176749f6525590&from=0&to=12&time=1%2B`)
@@ -44,8 +42,6 @@ const myRecipeFunc = () => {
         const minutes = num11 % 60
         return `${hours}:${minutes}`
       })
-
-
 
       console.log(timeConvert())
 
