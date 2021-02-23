@@ -1,12 +1,15 @@
 const maxTime = document.getElementById('max-time')
 const button = document.getElementById('button')
+const inputValue = document.getElementById('input-value')
 
 //Global var
-let max
+let maxi = 60
 
-const myRecipeFunc = () => {
+
+const myRecipeFunc = (maxi) => {
+  //console.log(maxi)
   fetch(
-    `https://api.edamam.com/search?q=vegetarian&app_id=af973ae3&app_key=3d25a0aca50ab9f0f6176749f6525590&from=0&to=24&time=1-${max}`)
+    `https://api.edamam.com/search?q=vegetarian&app_id=af973ae3&app_key=3d25a0aca50ab9f0f6176749f6525590&from=0&to=24&time=1-${maxi}`)
     .then((response) => {
       return response.json()
     }).then((json) => {
@@ -59,12 +62,23 @@ const myRecipeFunc = () => {
     })
 }
 
-myRecipeFunc()
+
+myRecipeFunc(maxi)
+
 
 button.addEventListener('click', () => {
-  max = maxTime.value
- 
+  //event.preventDefault()
+  //console.log(maxTime.value)
+  //myRecipeFunc(maxTime.value)
+  //console.log(maxTime.value)
+  maxi = maxTime.value
+  console.log(maxi)
+  myRecipeFunc(maxi)
+  document.getElementById('recipe-items').innerHTML = ""
 })
 
-console.log(max)
+
+
+
+
 
