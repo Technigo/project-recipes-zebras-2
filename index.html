@@ -18,10 +18,30 @@
 
    
     <form id="input-value">
-        <label for="ffrom">Maximum minute of cooking</label>
-        <input type="text" id="max-time" value=""> 
-        <button  id="button">Search</button>
+        <p>Please select food type:</p>
+        <input type="radio" id="foodType" name="chicken" value="chicken">
+        <label>Chicken</label><br>
+        <input type="radio" id="foodType" name="meat" value="meat">
+        <label >Meat</label><br>
+        <input type="radio" id="foodType" name="vegetarian" value="vegetarian">
+        <label >Vegetarian</label> 
+        <br>
+        <br>
+        <!--<label>Maximum minute of cooking</label>
+        <input type="text" id="max-time" value=""> -->
+        <br>
+        <label>Maximum result</label>
+        <input type="text" id="max-result" value=""> 
+        <br>
+        <p>Maximum cooking time in minute:</p>
+        <input type="range" id="max-time" min="1" max="400" value="">     
+        <br>
+        <button  id="button">Filter</button>
+        <br>
     </form> 
+
+
+
 
     <section id="recipe-container" class="recipe-container">
         <div id="recipe-items" class="recipe-items">
