@@ -1,19 +1,21 @@
-const maxTime = document.getElementById('max-time')
-const inputValue = document.getElementById('input-value')
-const chicken = document.getElementById('chicken')
-const fish = document.getElementById('fish')
-const meat = document.getElementById('meat')
-const vegetarian = document.getElementById('vegetarian')
-const button = document.getElementById('button')
+const meatButton = document.getElementById('meat-button')
+const chickenButton = document.getElementById('chicken-button')
+const fishButton = document.getElementById('fish-button')
+const vegetarianButton = document.getElementById('vegetarian-button')
+
+const button30 = document.getElementById('30')
+const button60 = document.getElementById('60')
+const button90 = document.getElementById('90')
+const button120 = document.getElementById('120')
 
 //Global var
 let foodType
+let time 
 
 
-const myRecipeFunc = (foodType) => {
+const myRecipeFunc = (foodType, time) => {
   //console.log(maxi)
-  fetch(
-    `https://api.edamam.com/search?q=${foodType}&app_id=af973ae3&app_key=3d25a0aca50ab9f0f6176749f6525590&from=0&to=20&time=1-20`) //time = 1-30
+  fetch(`https://api.edamam.com/search?q=${foodType}&app_id=af973ae3&app_key=3d25a0aca50ab9f0f6176749f6525590&from=0&to=20&time=1-${time}`)
     .then((response) => {
       return response.json()
     }).then((json) => {
@@ -67,10 +69,67 @@ const myRecipeFunc = (foodType) => {
 }
 
 
-myRecipeFunc('vegetarian')
 
 
-button.addEventListener('click', (event) => {
+meatButton.addEventListener('click', () => {
+  document.getElementById('recipe-items').innerHTML = ""
+  foodType = meatButton.value
+  myRecipeFunc(foodType)
+
+})
+
+chickenButton.addEventListener('click', () => {
+  document.getElementById('recipe-items').innerHTML = ""
+  foodType = chickenButton.value
+  myRecipeFunc(foodType)
+
+})
+
+fishButton.addEventListener('click', () => {
+  document.getElementById('recipe-items').innerHTML = ""
+  foodType = fishButton.value
+  myRecipeFunc(foodType)
+})
+
+vegetarianButton.addEventListener('click', () => {
+  document.getElementById('recipe-items').innerHTML = ""
+  foodType = vegetarianButton.value
+  myRecipeFunc(foodType)
+
+})
+
+
+button30.addEventListener('click', () => {
+  time = button30.value
+  
+  document.getElementById('recipe-items').innerHTML = ""
+
+})
+
+chickenButton.addEventListener('click', () => {
+  document.getElementById('recipe-items').innerHTML = ""
+  foodType = chickenButton.value
+  myRecipeFunc(foodType)
+
+})
+
+fishButton.addEventListener('click', () => {
+  document.getElementById('recipe-items').innerHTML = ""
+  foodType = fishButton.value
+  myRecipeFunc(foodType)
+})
+
+vegetarianButton.addEventListener('click', () => {
+  document.getElementById('recipe-items').innerHTML = ""
+  foodType = vegetarianButton.value
+  myRecipeFunc(foodType)
+
+})
+
+myRecipeFunc('vegetarian', '20')
+
+
+/*button.addEventListener('click', (event) => {
   event.preventDefault()
 
   switch (myRecipeFunc) {
@@ -86,15 +145,11 @@ button.addEventListener('click', (event) => {
     default:
       foodType = vegetarian.value
     
-  }
+  }*/
+
 
   //foodType = meat.value
-  myRecipeFunc(foodType)
+ /* myRecipeFunc(foodType)
   document.getElementById('recipe-items').innerHTML = ""
   //maximumresult.innerHTML = ""
-})
-
-
-
-
-
+})*/
